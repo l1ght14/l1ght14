@@ -33,7 +33,6 @@ figure breaks the build rather than silently making the documentation wrong.
 Business read: 87% of revenue at risk sits in month-to-month contracts churning at 42.7%
 against 2.8% for two-year.
 
-→ [Full write-up and interview walkthrough](https://github.com/l1ght14/customer-churn-prediction/blob/main/docs/INTERVIEW_GUIDE.md)
 
 ### [Bike Demand Forecasting](https://github.com/l1ght14/bike-demand-forecasting) · UCI, 731 days
 
@@ -62,7 +61,6 @@ Also worth noting:
 132 tests, byte-reproducible, and hermetic — an earlier suite deleted the project's own
 committed deliverable while reporting green.
 
-→ [Full write-up and interview walkthrough](https://github.com/l1ght14/bike-demand-forecasting/blob/main/docs/INTERVIEW_GUIDE.md)
 
 ## Earlier work
 

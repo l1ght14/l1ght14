@@ -74,6 +74,37 @@ Seven-day-ahead daily demand, where the interesting result is the one that does 
 
 Reported because the negative result is the transferable one. 132 tests, byte-reproducible.
 
+### Data science
+
+#### [Data Science Portfolio](https://github.com/l1ght14/data-science-portfolio) — 4 projects, 219 tests
+
+Four projects built around one claim: **a model score is not a result.** Each exists to
+produce a number somebody can act on, and each forced a decision a notebook would have
+hidden.
+
+- [**01 Churn & business impact**](https://github.com/l1ght14/01-churn-business-impact) —
+  PR-AUC 0.657 against a 0.265 baseline, $97k projected retention value. The operating
+  threshold is set by break-even probability (`offer_cost / cost_of_churn`), not by
+  maximising F1: the same model supports a campaign targeting 49% of the base or 77% of it,
+  depending purely on what an offer costs to make.
+- [**02 Fraud detection, served**](https://github.com/l1ght14/02-fraud-detection-serving) —
+  **90.7% fraud recall at 0.49% FPR**, 0.82 average precision. On a 0.17%-positive problem
+  **ROC-AUC ranks the models backwards** — the best ROC-AUC had the worst average precision.
+- [**03 RAG knowledge assistant**](https://github.com/l1ght14/03-rag-knowledge-assistant) —
+  hybrid retrieval with reciprocal rank fusion and a **non-zero abstention threshold by
+  default**, because a retriever that always returns something is a hallucination factory.
+  Marked incomplete in its own STATUS.md.
+- [**04 Executive dashboard**](https://github.com/l1ght14/04-exec-dashboard) — DuckDB star
+  schema over 99,441 orders; revenue reconciles to **R$16,008,872.12**, which is the only
+  available proof that the grain decisions and payment rollups are right.
+
+The sharpest defect is worth keeping: a 434-line star schema, carefully commented, in which
+**every raw column name was invented** — `order_paid_timestamp` where the dataset has
+`order_purchase_timestamp`. It could not bind against real data at all. Same file shipped a
+`repeat_rate` that was structurally 0.00%, because that copy of the dataset has one generated
+`customer_id` per order. Eight of the ten defects across the four projects were found by
+*running* something, not by reading it.
+
 ### Data engineering
 
 #### [Delta Lake Medallion Lakehouse](https://github.com/l1ght14/spark-delta-lakehouse) — Delta Lake + PySpark + Airflow
